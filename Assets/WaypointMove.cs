@@ -6,7 +6,7 @@ public class WaypointMove : MonoBehaviour
 {
     public float speed = 2f;                  // Speed of movement
     public GameObject[] waypoints;            // Array of waypoints to move towards
-    private GameObject currentTarget;         // Current target waypoint
+    public GameObject currentTarget;         // Current target waypoint
     private int currentIndex = 0;             // Index of the current waypoint
     public float stopDistance = 0.1f;         // Distance threshold to consider the waypoint reached
 

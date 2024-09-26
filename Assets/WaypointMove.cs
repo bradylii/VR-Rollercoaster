@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WaypointMove : MonoBehaviour
 {
-    public float speed = 2f;                  // Speed of movement
+    private float speed;                 // Speed of movement
     public GameObject[] waypoints;            // Array of waypoints to move towards
     public GameObject currentTarget;         // Current target waypoint
     private int currentIndex = 0;             // Index of the current waypoint

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class WaypointMove : MonoBehaviour
 {
@@ -27,6 +28,14 @@ public class WaypointMove : MonoBehaviour
     {
         if (currentTarget != null)
         {
+            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.LTouch))
+            {
+                speed += 10f;
+            }
+            if (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.LTouch))
+            {
+                speed += 0.1f;
+            }
             Vector3 direction = currentTarget.transform.position - transform.position;
             // Use a unit vector (normalized) to ensure constant speed
             //speed = speeds[currentIndex];

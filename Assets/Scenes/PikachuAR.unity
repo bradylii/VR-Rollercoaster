@@ -5851,6 +5851,7 @@ GameObject:
   - component: {fileID: 641929556}
   - component: {fileID: 641929557}
   - component: {fileID: 641929558}
+  - component: {fileID: 641929559}
   m_Layer: 0
   m_Name: RightController
   m_TagString: Untagged
@@ -5906,6 +5907,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 641929557}
+--- !u!114 &641929559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641929555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2bd730600322a4cb5bcd2b3cdd35fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finger: {fileID: 0}
+  hand: {fileID: 641929555}
 --- !u!1 &646664699
 GameObject:
   m_ObjectHideFlags: 0

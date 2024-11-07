@@ -11,17 +11,31 @@ public class Teleport : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        lineRenderer = GetComponent<LineRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         RaycastHit hit;
-
-        if (Physics.Raycast(new Ray(this.transform.position, this.transform.forward), out hit))
+        lineRenderer.SetPosition(0, controller.transform.position);
+        if (Physics.Raycast(new Ray(controller.transform.position, controller.transform.forward), out hit))
         {
-            lineRenderer.SetPosition(0, this.transform.position);
+            lineRenderer.SetPosition(1, new Vector3(hit.point.x, 1, hit.point.z));
+            lineRenderer.SetPosition(2, hit.point);
+            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.LTouch))
+            {
+                head.transform.position = new Vector3(hit.point.x, head.transform.position.y, hit.point.z);
+                //this.transform.position = new Vector3(hit.point.x, this.transform.position.y, hit.point.z);
+            }
+
+        }
+        
+        else
+        {
+            Vector3 forNow = controller.transform.position + controller.transform.forward;
+            lineRenderer.SetPosition(1, new Vector3(forNow.x, forNow.y + 1, forNow.z));
+            lineRenderer.SetPosition(2, new Vector3(forNow.x, 0, forNow.z));
 
         }
 
